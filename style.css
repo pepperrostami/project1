@@ -1,0 +1,172 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+.messageScreen {
+    display: none;
+    border: 1px solid red;
+}
+        #gameStart {
+            display: none;
+        }
+
+.basicInfo {
+    width: 22%;
+    height: 100%;
+    float: right;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.basicInfo > div {
+    background-color: pink;
+    margin: 5px;
+    border: 1px solid red;
+}
+        #title {
+        }
+        #player {
+        }
+        #difficulty {
+        }
+        #timeRemaining {
+        }
+   
+.cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 83%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.cards > div {
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
+        #card1 {
+        }
+        #card2 {
+        }
+        #card3 {
+        }
+        #card4 {
+        }
+        #card5 {
+        }
+        #card6 {
+        }
+        #card7 {
+        }
+        #card8 {
+        }
+        #card9 {
+        }
+        #card10 {
+        }
+        #card11 {
+        }
+        #card12 {
+        }
+        #card13 {
+        }
+        #card14 {
+        }
+        #card15 {
+        }
+        #card16 {
+        }
+        #card17 {
+        }
+        #card18 {
+        }
+        #card19 {
+        }
+        #card20 {
+        }
+        #card21 {
+        }
+        #card22 {
+        }
+        #card23 {
+        }
+        #card24 {
+        }
+        #card25 {
+        }
+        #card26 {
+        }
+        #card27 {
+        }
+        #card28 {
+        }
+        #card29 {
+        }
+        #card30 {
+        }
+        #card31 {
+        }
+        #card32 {
+        }
+        #card33 {
+        }
+        #card34 {
+        }
+        #card35 {
+        }
+        #card36 {
+        }
+
+ .stats {
+    width: 22%;
+    height: 45%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+ }
+
+ .stats > div {
+    border: 1px solid red;
+    background-color: pink;
+    margin-top: 80px;
+    margin-bottom: 20px;
+ }
+        #timeElapsed {
+        }
+
+        #moves {
+        }
+
+        #accuracy {
+        }
+
+        #averageMatchTime {
+        }
+
+        #memoryRecall {
+        }
+
+.messageScreen {
+    border: 1px solid red;
+    display: none;
+}
+       #gameEnd {
+            border: 1px solid red;
+       }
