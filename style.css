@@ -4,80 +4,74 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    
+
     /* needs to be updated to purchased video file from Adobe stock */
     background-image: url(https://as1.ftcdn.net/jpg/03/94/69/36/240_F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.jpg);
-
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .messageScreen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(255, 192, 203, 0.8), rgba(255, 105, 108, 0.8));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    /* background: linear-gradient(to bottom, rgba(128, 128, 128, 0.8), rgba(192, 192, 192, 0.8)); */
+    display: block;
     text-align: center;
+    z-index: 9999;
 }
-        #gameStart {
-            font-size: 25px;
-            font-family: orbitron, sans-serif;
-            font-weight: 400;
-            padding-top: 50px;
-            padding-left: 200px;
-            padding-right: 200px;
-        }
-        
-        #nextButton {
-            background-color: grey;
-            border: none;
-            padding: 5px 10px;
-            font-size: 40px;
-            font-family: orbitron, sans-serif;
-            font-weight: 800;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
+.messageScreen > p {
+    margin-bottom: 60px;
+}
+.button {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    width: 80px;
+    border-radius: 15px;
+    background-color: grey;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    font-family: orbitron, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+}
 .soundtrack {
     position: absolute;
     margin-top: 10px;
     margin-left: 10px;
 }
-
-.basicInfo {
+.basicInfo, .stats {
     width: 22%;
-    height: 100%;
-    float: right;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    overflow-y: auto;
 }
-
-.basicInfo > div {
-    margin: 5px;
+.basicInfo {
+    width: 18%;
+    overflow-y: auto;
+    height: 100%;
+    float: right;
+    padding: 10px;
+    position: absolute;
+    margin-right: 0%;
+    top: 0;
+    right: 0;
 }
-        #title {
-            font-weight: 200;
-        }
-        #player {
-        }
-        #difficulty {
-        }
-        #timeRemaining {
-        }
-
+.stats {
+    height: 45%;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 .cards {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -90,7 +84,6 @@ body {
     margin: 0 auto;
     margin-top: 40px;
 }
-
 .cards > div {
     border: 1px solid white;
     width: 100%;
@@ -104,150 +97,182 @@ body {
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    background-color: #000;
 }
-        #card1 {
-            background-image: url("Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png");
-        }
-        #card2 {
-            background-image: url("Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png");
-        }
-        #card3 {
-            background-image: url("Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png");
-        }
-        #card4 {
-            background-image: url("Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png");
-        }
-        #card5 {
-            background-image: url("Card Images/05.Ringstone_MET_DT9196.png");
-        }
-        #card6 {
-            background-image: url("Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png");
-        }
-        #card7 {
-            background-image: url("Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png");
-        }
-        #card8 {
-            background-image: url("Card Images/05.Ringstone_MET_DT9196.png");
-        }
-        #card9 {
-            background-image: url("Card Images/07.Scepter_(MET_collection).png");
-        }
-        #card10 {
-            background-image: url("Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png");
-        }
-        #card11 {
-            background-image: url("Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png");
-        }
-        #card12 {
-            background-image: url("Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png");
-        }
-        #card13 {
-            background-image: url("Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png");
-        }
-        #card14 {
-            background-image: url("Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png");
-        }
-        #card15 {
-            background-image: url("Card Images/12.Terracotta_skyphos.png");
-        }
-        #card16 {
-            background-image: url("Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png");
-        }
-        #card17 {
-            background-image: url("Card Images/12.Terracotta_skyphos.png");
-        }
-        #card18 {
-            background-image: url("Card Images/07.Scepter_(MET_collection).png");
-        }
-        #card19 {
-            background-image: url("Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png");
-        }
-        #card20 {
-            background-image: url("Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png");
-        }
-        #card21 {
-            background-image: url("Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png");
-        }
-        #card22 {
-            background-image: url("Card Images/15.Pyxis_attique_à_figures_rouges_MET.png");
-        }
-        #card23 {
-            background-image: url("Card Images/16.Zeus_Ammon_Cyprus.png");
-        }
-        #card24 {
-            background-image: url("Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png");
-        }
-        #card25 {
-            background-image: url("Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png");
-        }
-        #card26 {
-            background-image: url("Card Images/15.Pyxis_attique_à_figures_rouges_MET.png");
-        }
-        #card27 {
-            background-image: url("Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png");
-        }
-        #card28 {
-            background-image: url("Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png");
-        }
-        #card29 {
-            background-image: url("Card Images/16.Zeus_Ammon_Cyprus.png");
-        }
-        #card30 {
-            background-image: url("Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png");
-        }
-        #card31 {
-            background-image: url("Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png");
-        }
-        #card32 {
-            background-image: url("Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png");
-        }
-        #card33 {
-            background-image: url("Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png");
-        }
-        #card34 {
-            background-image: url("Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png");
-        }
-        #card35 {
-            background-image: url("Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png");
-        }
-        #card36 {
-            background-image: url("Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png");
-        }
-
- .stats {
-    width: 22%;
-    height: 45%;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
- }
-
- .stats > div {
+.cards > div.revealed {
+    background-color: transparent;
+}
+.stats > div {
     margin-top: 80px;
     margin-bottom: 20px;
- }
-        #timeElapsed {
-        }
-
-        #moves {
-        }
-
-        #accuracy {
-        }
-
-        #averageMatchTime {
-        }
-
-        #memoryRecall {
-        }
-
-.messageScreen {
-    display: none;
 }
-       #gameEnd {
-       }
+#title {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-size: 60px;
+    font-style: normal;
+}
+
+#card1 {
+    background-image: url("Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png");
+}
+
+#card2 {
+    background-image: url("Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png");
+}
+
+#card3 {
+    background-image: url("Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png");
+}
+
+#card4 {
+    background-image: url("Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png");
+}
+
+#card5 {
+    background-image: url("Card Images/05.Ringstone_MET_DT9196.png");
+}
+
+#card6 {
+    background-image: url("Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png");
+}
+
+#card7 {
+    background-image: url("Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png");
+}
+
+#card8 {
+    background-image: url("Card Images/05.Ringstone_MET_DT9196.png");
+}
+
+#card9 {
+    background-image: url("Card Images/07.Scepter_(MET_collection).png");
+}
+
+#card10 {
+    background-image: url("Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png");
+}
+
+#card11 {
+    background-image: url("Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png");
+}
+
+#card12 {
+    background-image: url("Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png");
+}
+
+#card13 {
+    background-image: url("Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png");
+}
+
+#card14 {
+    background-image: url("Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png");
+}
+
+#card15 {
+    background-image: url("Card Images/12.Terracotta_skyphos.png");
+}
+
+#card16 {
+    background-image: url("Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png");
+}
+
+#card17 {
+    background-image: url("Card Images/12.Terracotta_skyphos.png");
+}
+
+#card18 {
+    background-image: url("Card Images/07.Scepter_(MET_collection).png");
+}
+
+#card19 {
+    background-image: url("Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png");
+}
+
+#card20 {
+    background-image: url("Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png");
+}
+
+#card21 {
+    background-image: url("Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png");
+}
+
+#card22 {
+    background-image: url("Card Images/15.Pyxis_attique_à_figures_rouges_MET.png");
+}
+
+#card23 {
+    background-image: url("Card Images/16.Zeus_Ammon_Cyprus.png");
+}
+
+#card24 {
+    background-image: url("Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png");
+}
+
+#card25 {
+    background-image: url("Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png");
+}
+
+#card26 {
+    background-image: url("Card Images/15.Pyxis_attique_à_figures_rouges_MET.png");
+}
+
+#card27 {
+    background-image: url("Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png");
+}
+
+#card28 {
+    background-image: url("Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png");
+}
+
+#card29 {
+    background-image: url("Card Images/16.Zeus_Ammon_Cyprus.png");
+}
+
+#card30 {
+    background-image: url("Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png");
+}
+
+#card31 {
+    background-image: url("Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png");
+}
+
+#card32 {
+    background-image: url("Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png");
+}
+
+#card33 {
+    background-image: url("Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png");
+}
+
+#card34 {
+    background-image: url("Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png");
+}
+
+#card35 {
+    background-image: url("Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png");
+}
+
+#card36 {
+    background-image: url("Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png");
+}
+
+#timeElapsed {
+    padding: 10px;
+}
+
+#moves {
+    padding: 10px;
+}
+
+#accuracy {
+    padding: 10px;
+}
+
+#averageMatchTime {
+    padding: 10px;
+}
+
+#memoryRecall {
+    padding: 10px;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=MedievalSharp&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <!-- initial screen- first thing user sees before beginning the game -->
-    <div class="messageScreen">
-        <div class="messageScreen" id="gameInfo">
-            <!-- game info -->
-            <p>The market is flooded these days with fakes. Find the duplicates to be assessed and authenticated to find the true artifact before it can be added to the permanent collection.</p>
-            <button id="nextButton">NEXT</button>
-        </div>
-        <div class="messageScreen" id="gameSpecs">
-            <!-- enter name -->
-            <input type="text" id="userName" placeholder="Enter Name">
-            <!-- select difficulty: easy, medium, hard, all different time levels -->
-            <button class ="levelButtons" id="easy">EASY</button>
-            <button class ="levelButtons" id="medium">MEDIUM</button>
-            <button class ="levelButtons" id="difficult">DIFFICULT</button>
-            <!-- play button -->
-            <button id="playButton">PLAY</button>
-        </div>
+    <div id="name">
+        <form id="nameForm">
+            <input type="text" id="userName" placeholder="ENTER NAME...">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="messageScreen" id="gameInfo" style="display:none;">
+        <p>Help, professor! Pranksters have flooded our museum with fakes and no one can tell the difference! Find the dupes and authenticate the real masterpieces. Only you can restore integrity to our institution!</p>
+        <button id="nextButton">NEXT</button>
+    </div>
+    <div class="messageScreen" id="gameSpecs" style="display: none;">
+        <p>Only a true genius can resolve all three galleries before the museum opens. Are you up for the challenge? We're counting on you!</p>
+        <!-- select difficulty: easy, medium, hard, all different time levels -->
+        <button class="levelButtons" id="easy">1 Gallery</button>
+        <button class="levelButtons" id="medium">2 Galleries</button>
+        <button class="levelButtons" id="difficult">3 Galleries</button>
+        <button id="playButton">PLAY</button>
     </div>
 
-    <!-- static top left div for sound -->
     <div class="soundtrack">
         <button class="soundtrack" id="sound">PLAY</button>
         <button class="soundtrack" id="soundStop">STOP</button>
@@ -37,10 +46,11 @@
 
     <!-- static top right div for displaying game title, player name as entered on message screen, and difficulty level selected. There is also a timer counting down the time remaining for user to complete the game -->
     <div class="basicInfo">
-        <h1 id="title">CONCENTRATION</h1>
-        <div id="player">PLAYER</div>
-        <div id="difficulty">DIFFICULTY</div>
-        <div id="timeRemaining">TIME REMAINING</div>
+        <h1 id="title">FIND THE FRAUD</h1>
+        <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
+        <div id="player">PLAYER NAME:</div>
+        <div id="difficulty">LEVEL:</div>
+        <div id="timeRemaining">TIME REMAINING:</div>
     </div>
 
     <!-- div for card grid. 36 cards, 18 pairs. -->
@@ -113,7 +123,7 @@
             <!-- replay button -->
         </div>
     </div>
-    
+
 </body>
 <script src="script.js" defer></script>
 </html>

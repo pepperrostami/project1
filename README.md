@@ -1,4 +1,5 @@
 # project1
+H2 is a phonetic transliteration of egyptian hieroglyphs roughly spelling out "general assembly project one" - gnrl smbl(eye) prjkt(eye)n
 Images sourced from The Metropolitan Museum of Art Open Access CSV
 https://github.com/metmuseum/openaccess :
 
