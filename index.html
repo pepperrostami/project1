@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- initial screen- first thing user sees before beginning the game -->
     <div class="messageScreen">
-        <div id="gameStart">
+        <div class="messageScreen" id="gameInfo">
             <!-- game info -->
+            <p>The market is flooded these days with fakes. Find the duplicates to be reviewed and authenticated before they can be added to the gallery.</p>
+            <button id="nextButton">NEXT</button>
+        </div>
+        <div class="messageScreen" id="gameSpecs">
             <!-- enter name -->
+            <input type="text" id="userName" placeholder="Enter Name">
             <!-- select difficulty: easy, medium, hard, all different time levels -->
+            <button class ="levelButtons" id="easy">EASY</button>
+            <button class ="levelButtons" id="medium">MEDIUM</button>
+            <button class ="levelButtons" id="difficult">DIFFICULT</button>
             <!-- play button -->
+            <button id="playButton">PLAY</button>
         </div>
     </div>
 
     <!-- static top right div for displaying game title, player name as entered on message screen, and difficulty level selected. There is also a timer counting down the time remaining for user to complete the game -->
     <div class="basicInfo">
-        <div id="title">TITLE</div>
+        <h1 id="title">TITLE</h1>
         <div id="player">PLAYER</div>
         <div id="difficulty">DIFFICULTY</div>
         <div id="timeRemaining">TIME REMAINING</div>
@@ -74,7 +86,7 @@
     <!-- div for stats window. -->
     <div class="stats">
         <!-- Measure the time it takes for the player to complete the game. This adds a competitive element, encouraging players to improve their speed over time. -->
-        <div id="timeElapsed">TIME ELAPSED:</div>
+        <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
 
         <!-- Track how many moves the player makes to complete the game. Fewer moves typically indicate a better memory and strategy. -->
         <div id="moves">MOVES:</div>
