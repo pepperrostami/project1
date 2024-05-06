@@ -45,6 +45,12 @@ body {
             margin-top: 10px;
         }
 
+.soundtrack {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .basicInfo {
     width: 22%;
     height: 100%;
@@ -63,6 +69,7 @@ body {
     margin: 5px;
 }
         #title {
+            font-weight: 200;
         }
         #player {
         }
@@ -70,7 +77,7 @@ body {
         }
         #timeRemaining {
         }
-   
+
 .cards {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
