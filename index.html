@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Find The Fraud!</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,113 +16,117 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
 </head>
-
 <body>
-    <!-- initial screen- first thing user sees before beginning the game -->
-    <!-- <div id="name">
-        <form id="nameForm">
-            <input type="text" id="userName" placeholder="ENTER NAME...">
-            <button type="submit">Submit</button>
+    <div id="screen1" class="messageContainer">
+        <form id="input-form">
+            <input type="text" id="name" placeholder="Enter Your Name..." required>
+            <input type="button" id="startBtn" value="START">
         </form>
     </div>
-    <div class="messageScreen" id="gameInfo" style="display:none;">
-        <p>Help, professor! Pranksters have flooded our museum with fakes and no one can tell the difference! Find the dupes and authenticate the real masterpieces. Only you can restore integrity to our institution!</p>
-        <button id="nextButton">NEXT</button>
+    <div id="screen2" class="messageContainer" style="display: none;">
+        <div id="intro">
+            <p id="professorText">Help, Professor!</p>
+            <button id="nextBtn1" class="next-btn">NEXT</button>
+        </div>
     </div>
-    <div class="messageScreen" id="gameSpecs" style="display: none;">
-        <p>Only a true genius can resolve all three galleries before the museum opens. Are you up for the challenge? We're counting on you!</p>
-        select difficulty: easy, medium, hard, all different time levels -->
-        <!-- <button class="levelButtons" id="easy">1 Gallery</button>
-        <button class="levelButtons" id="medium">2 Galleries</button>
-        <button class="levelButtons" id="difficult">3 Galleries</button>
-        <button id="playButton">PLAY</button>
+    <div id="screen3" class="messageContainer" style="display: none;">
+        <div id="levels">
+            <p>Only a true genius can resolve all three galleries before the museum opens. Are you up for the challenge? We're counting on you!</p>
+            <button id="levelOne" class="level-btn">1 GALLERY</button>
+            <button id="levelTwo" class="level-btn">2 GALLERIES</button>
+            <button id="levelThree" class="level-btn">3 GALLERIES</button>
+            <input type="button" id="readyBtn" value="READY!">
+        </div>
     </div>
-
-    <div class="soundtrack">
-        <button class="soundtrack" id="sound">PLAY</button>
-        <button class="soundtrack" id="soundStop">STOP</button>
-    </div> -->
-
-    <!-- static top right div for displaying game title, player name as entered on message screen, and difficulty level selected. There is also a timer counting down the time remaining for user to complete the game -->
-    <div class="basicInfo">
-        <h1 id="title">FIND THE FRAUD</h1>
-        <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
-        <div id="player">PLAYER NAME:</div>
-        <div id="difficulty">LEVEL:</div>
-        <div id="timeRemaining">TIME REMAINING:</div>
+    <div id="screen4" class="gameContainer" style="display: none;">
+        <div class="soundtrack" style="display:none;">
+            <button class="soundtrack" id="sound">PLAY</button>
+            <button class="soundtrack" id="soundStop">STOP</button>
+        </div>
+        <div class="userInfo">
+            <h1 id="title">FIND THE FRAUD</h1>
+            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
+            <h2 id="player">PROFESSOR:</h2>
+            <div id="difficulty">LEVEL:</div>
+            <div id="countdownTimer">00:00</div>
+        </div>
+        <div class="cards">
+        </div>
+        <div class="stats">
+            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
+            <div id="moves">MOVES:</div>
+            <div id="accuracy">ACCURACY:</div>
+            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
+        </div>
     </div>
-
-    <!-- div for card grid. 36 cards, 18 pairs. -->
-    <div class="cards">
-        <!-- row 1 -->
-        <div class="cards card" id="card1" data-image="Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"></div>
-        <div class="cards card" id="card2" data-image="Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"></div>
-        <div class="cards card" id="card3" data-image="Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card4" data-image="Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png"></div>
-        <div class="cards card" id="card5" data-image="Card Images/05.Ringstone_MET_DT9196.png"></div>
-        <div class="cards card" id="card6" data-image="Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png"></div>
-        <!-- row 2 -->
-        <div class="cards card" id="card7" data-image="Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png"></div>
-        <div class="cards card" id="card8" data-image="Card Images/05.Ringstone_MET_DT9196.png"></div>
-        <div class="cards card" id="card9" data-image="Card Images/07.Scepter_(MET_collection).png"></div>
-        <div class="cards card" id="card10" data-image="Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png"></div>
-        <div class="cards card" id="card11" data-image="Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"></div>
-        <div class="cards card" id="card12" data-image="Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png"></div>
-        <!-- row 3 -->
-        <div class="cards card" id="card13" data-image="Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"></div>
-        <div class="cards card" id="card14" data-image="Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png"></div>
-        <div class="cards card" id="card15" data-image="Card Images/12.Terracotta_skyphos.png"></div>
-        <div class="cards card" id="card16" data-image="Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png"></div>
-        <div class="cards card" id="card17" data-image="Card Images/12.Terracotta_skyphos.png"></div>
-        <div class="cards card" id="card18" data-image="Card Images/07.Scepter_(MET_collection).png"></div>
-        <!-- row 4 -->
-        <div class="cards card" id="card19" data-image="Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png"></div>
-        <div class="cards card" id="card20" data-image="Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png"></div>
-        <div class="cards card" id="card21" data-image="Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png"></div>
-        <div class="cards card" id="card22" data-image="Card Images/15.Pyxis_attique_à_figures_rouges_MET.png"></div>
-        <div class="cards card" id="card23" data-image="Card Images/16.Zeus_Ammon_Cyprus.png"></div>
-        <div class="cards card" id="card24" data-image="Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png"></div>
-        <!-- row 5 -->
-        <div class="cards card" id="card25" data-image="Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card26" data-image="Card Images/15.Pyxis_attique_à_figures_rouges_MET.png"></div>
-        <div class="cards card" id="card27" data-image="Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card28" data-image="Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png"></div>
-        <div class="cards card" id="card29" data-image="Card Images/16.Zeus_Ammon_Cyprus.png"></div>
-        <div class="cards card" id="card30" data-image="Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png"></div>
-        <!-- row 6 -->
-        <div class="cards card" id="card31" data-image="Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card32" data-image="Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card33" data-image="Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png"></div>
-        <div class="cards card" id="card34" data-image="Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png"></div>
-        <div class="cards card" id="card35" data-image="Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png"></div>
-        <div class="cards card" id="card36" data-image="Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png"></div>
+    <div id="screen5" class="container" style="display: none;">
+        <div class="soundtrack" style="display:none;">
+            <button class="soundtrack" id="sound">PLAY</button>
+            <button class="soundtrack" id="soundStop">STOP</button>
+        </div>
+        <div class="userInfo">
+            <h1 id="title">FIND THE FRAUD</h1>
+            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
+            <div id="player">PLAYER NAME:</div>
+            <div id="difficulty">LEVEL:</div>
+            <div id="countdownTimer">00:00</div>
+        </div>
+        <div class="cards">
+        </div>
+        <div class="stats">
+            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
+            <div id="moves">MOVES:</div>
+            <div id="accuracy">ACCURACY:</div>
+            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
+        </div>
     </div>
-
-    <!-- div for stats window. -->
-    <div class="stats">
-        <!-- Measure the time it takes for the player to complete the game. This adds a competitive element, encouraging players to improve their speed over time. -->
-        <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
-
-        <!-- Track how many moves the player makes to complete the game. Fewer moves typically indicate a better memory and strategy. -->
-        <div id="moves">MOVES:</div>
-
-        <!-- Calculate the percentage of correct matches out of the total attempts. This stat helps players assess their memory accuracy and improve their concentration. -->
-        <div id="accuracy">ACCURACY:</div>
-
-        <!-- Calculate the average time taken by the player to find a match. This can provide insights into the player's efficiency in scanning and remembering card positions. -->
-        <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
-
-        <!-- Measure how quickly players are able to recall the positions of cards they've previously seen. This stat can help players identify areas for improvement in their memory skills. -->
-        <div id="memoryRecall">MEMORY RECALL RATE:</div>
+    <div id="screen6" class="container" style="display: none;">
+        <div class="soundtrack" style="display:none;">
+            <button class="soundtrack" id="sound">PLAY</button>
+            <button class="soundtrack" id="soundStop">STOP</button>
+        </div>
+        <div class="userInfo">
+            <h1 id="title">FIND THE FRAUD</h1>
+            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
+            <div id="player">PLAYER NAME:</div>
+            <div id="difficulty">LEVEL:</div>
+            <div id="countdownTimer">00:00</div>
+        </div>
+        <div class="cards">
+        </div>
+        <div class="stats">
+            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
+            <div id="moves">MOVES:</div>
+            <div id="accuracy">ACCURACY:</div>
+            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
+        </div>
     </div>
-
-    <!-- end screen. tells user if they won or lost. If they won, message should say the amount of time they beat the game in and how much time they had remaining. If they lost, message should say the amount of time they were given, now 0, how many pairs remain -->
-    <div class="messageScreen">
+    <div id="screen7" class="container" style="display: none;">
+        <div id="authenticationInfo">
+        </div>
+    </div>
+    <div id="screen8" class="container" style="display: none;">
+        <div id="authenticationGrid">
+        </div>
+    </div>
+    <div id="screen9" class="container" style="display: none;">
+        <div id="authenticationGrid">
+        </div>
+    </div>
+    <div id="screen10" class="container" style="display: none;">
+        <div id="authenticationGrid">
+        </div>
+    </div>
+    <div id="screen11" class="container" style="display: none;">
+        <div id="gameWin">
+            <!-- win message -->
+        </div>
+    </div>
+    <div id="screen12" class="container" style="display: none;">
         <div id="gameEnd">
             <!-- replay button -->
         </div>
     </div>
-
 </body>
 <script src="script.js" defer></script>
 </html>
