@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 //     const nameScreen = document.getElementById("name");
 //     const userNameInput = document.getElementById("userName");
 //     const isUserNameValid = () => {
@@ -33,4 +33,18 @@
 //             alert("Please enter your name and select a difficulty level.");
 //         }
 //     });
-// });
+
+const cards = document.querySelectorAll('.cards .card');
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Toggle visibility by changing background image
+            if (card.style.backgroundImage === 'url("Card Images/black-square-1000x750mm.png")') {
+                // Change to actual image
+                card.style.backgroundImage = `url(${card.dataset.image})`;
+            } else {
+                // Change to black square image
+                card.style.backgroundImage = 'url("Card Images/black-square-1000x750mm.png")';
+            }
+        });
+    });
+});
