@@ -95,7 +95,7 @@ input::placeholder {
     color:#7a5b3c;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
     font-style: normal;
     padding: 3%;
 }
@@ -103,9 +103,15 @@ input::placeholder {
     display: inline-block;
     margin: 10px;
     width: 20%;
+    height: 25%;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 200;
+    font-weight: 400;
+    font-size: 20px;
+    border: 5px solid lightgrey;
+    border-radius: 15px;
+    border-style: outset;
+    color: darkgrey;
 }
 .level-btn.selected {
     background-color: rgb(134, 73, 4);
@@ -123,13 +129,26 @@ input::placeholder {
     height: 80vmin;
 }
 .cardMatchGrid {
+    position: relative;
     border: 1px solid white;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #000;
+    width: 100%;
+    height: 100%;
 }
-.cards > div.revealed {
-    background-color: transparent;
+.black-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("Card Images/black-square-1000x750mm.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 0.25s ease-in-out;
+}
+.black-square.hidden {
+    opacity: 0;
 }
 .soundtrack {
     position: absolute;
@@ -143,6 +162,7 @@ input::placeholder {
     font-weight: 200;
     font-style: normal;
     overflow-y: auto;
+    color: grey;
 }
 .userInfo {
     width: 18%;
@@ -154,11 +174,13 @@ input::placeholder {
     margin-right: 0%;
     top: 0;
     right: 0;
+    text-align: right;
 }
 #countdownTimer {
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
+    margin-bottom: 15px;
 }
 .stats {
     height: 45%;
@@ -166,6 +188,9 @@ input::placeholder {
     position: absolute;
     bottom: 0;
     left: 0;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: left;
 }
 .stats > div {
     margin-top: 80px;
@@ -176,6 +201,7 @@ input::placeholder {
     font-weight: 400;
     font-size: 60px;
     font-style: normal;
+    margin-top: 100px;
 }
 
 #timeElapsed {
