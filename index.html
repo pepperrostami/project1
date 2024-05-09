@@ -1,74 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find The Fraud!</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=MedievalSharp&display=swap"
-        rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="js/script.js" defer></script>
-</head>
-<body>
-    <div id="screen1" class="messageContainer">
-        <form id="input-form">
-            <input type="text" id="name" placeholder="Name..." required>
-            <input type="button" id="startBtn" value="START">
-        </form>
-    </div>
-    <div id="screen2" class="messageContainer" style="display: none;">
-        <div id="intro">
-            <p id="professorText">Help, Professor!</p>
-            <button id="nextBtn1" class="next-btn">NEXT</button>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Find The Fraud!</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script defer src="js/script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=MedievalSharp&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
+    </head>
+    <audio id="background-music" loop>
+        <source src="mp3/FTF Theme quiet.mp3" type="audio/mp3">
+    </audio>
+    <div class="intro-modal-container" id="intro-modal-container">
+        <div class="intro-modal">
+                <div class="invitation">
+                <h1>Professor,<br /><br />we need your help!</h1>
+                <p>Pranksters have flooded our museum with fakes and no one can tell the difference! Search through the display cases in our archives to find the dupes and help us authenticate the real masterpieces.<br /><br />Only YOU can restore integrity to our great institution before the museum opens!</p>
+                </div>
+            <div class="image-container">
+            <img src=img/toplefticon.png class="icon-img">
+            </div>
+            <button id="ready">
+                <span class="front">
+                    READY!
+                </span>
+            </button>
         </div>
     </div>
-    <div id="screen3" class="messageContainer" style="display: none;">
-        <div id="levels">
-            <p>Only a true genius can resolve all three galleries before the museum opens. Are you up for the challenge? We're counting on you!</p>
-            <button id="levelOne" class="level-btn">1 GALLERY</button>
-            <button id="levelTwo" class="level-btn">2 GALLERIES</button>
-            <button id="levelThree" class="level-btn">3 GALLERIES</button>
-            <input type="button" id="readyBtn" value="READY!">
+    <div class="lose-modal-container" id="lose-modal-container">
+        <div class="lose-modal">
+            <p><br />We're out of time and the museum must open!<br /><br />A valiant effort, but this time, the pranksters win!</p>
+            <button id="replay">
+                <span class="front">
+                    REPLAY
+                </span>
+            </button>
         </div>
     </div>
-    <div id="screen4" class="gameContainer" style="display: none;">
-        <div class="soundtrack" style="display:none;">
-            <button class="soundtrack" id="sound">PLAY</button>
-            <button class="soundtrack" id="soundStop">STOP</button>
-        </div>
-        <div class="userInfo">
-            <div id="gameLogo"><img src="img/gameLogo.png"></div>
-            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
-            <h2 id="player">PROFESSOR:</h2>
-            <div id="difficulty">LEVEL:</div>
-            <div id="countdownTimer">00:00</div>
-        </div>
-        <div class="cards">
-        </div>
-        <div class="stats">
-            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
-            <div id="moves">MOVES:</div>
-            <div id="accuracy">ACCURACY:</div>
-            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
+    <div class="win-modal-container" id="win-modal-container">
+        <div class="win-modal">
+            <img src="img/winseal.png">
+            <p>Spectacular! All dupes have been found and can now be compared and authenticated.<br />The pranksters have not succeeded this time in sabotaging our institution!</p>
+            <button id="play-again">
+                <span class="front">
+                    REPLAY
+                </span>
+            </button>
         </div>
     </div>
-    <div id="screen11" class="container" style="display: none;">
-        <div id="gameWin">
-            <!-- win message -->
+    <body>
+        <div id="game-screen">
+            <h3>𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h3>
+            <div id="game-logo"><img src="img/gameLogo.png"></div>
+            <span class="timer" id="counter"></span>
+            <h2></h2>
+            <main>
+                <img src="" id="0" alt="">
+                <img src="" id="1" alt="">
+                <img src="" id="2" alt="">
+                <img src="" id="3" alt="">
+                <img src="" id="4" alt="">
+                <img src="" id="5" alt="">
+                <img src="" id="6" alt="">
+                <img src="" id="7" alt="">
+                <img src="" id="8" alt="">
+                <img src="" id="9" alt="">
+                <img src="" id="10" alt="">
+                <img src="" id="11" alt="">
+                <img src="" id="12" alt="">
+                <img src="" id="13" alt="">
+                <img src="" id="14" alt="">
+                <img src="" id="15" alt="">
+                <img src="" id="16" alt="">
+                <img src="" id="17" alt="">
+                <img src="" id="18" alt="">
+                <img src="" id="19" alt="">
+          </main>
         </div>
-    </div>
-    <div id="screen12" class="container" style="display: none;">
-        <div id="gameEnd">
-            <!-- replay button -->
-        </div>
-    </div>
-</body>
-<script src="script.js" defer></script>
+    </body>
+    <footer>
+        website created by <a href="https://github.com/pepperrostami">@pepperrostami</a>
+    </footer>
 </html>

@@ -1,228 +1,441 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    /* needs to be updated to purchased video file from Adobe stock */
-    background-image: url(https://as1.ftcdn.net/jpg/03/94/69/36/240_F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.jpg);
-    background-repeat: no-repeat;
+    background-color: linear-gradient(to bottom, rgba(44, 44, 44, 0.8), rgba(237, 235, 235, 0.8));
+    background-image: url('https://as1.ftcdn.net/jpg/03/94/69/36/240_F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
 }
-.messageContainer {
+
+.lose-modal-container, .win-modal-container {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350vw;
+    height: 350vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.intro-modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350vw;
+    height: 350vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    background-image: url('https://as1.ftcdn.net/jpg/03/94/69/36/240_F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.lose-modal-container.show, .win-modal-container.show, .intro-modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.lose-modal-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-modal-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.win-modal-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lose-modal, .win-modal, .intro-modal {
+    background: none;
+    border: none;
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+    display: grid;
+}
+.win-modal img {
+    width: 15%;
+    margin-left: 41%;
+    margin-top: 25%;
+}
+
+.intro-modal {
+    position: relative;
+}
+
+.lose-modal img {
+    width: 25vmin;
+    margin: auto;
+}
+
+.intro-modal img {
+    width: 35vmin;
+    margin: auto;
+}
+
+.intro-modal p {
+    margin-top: -1vmin;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 5.5vmin;
+    -webkit-text-stroke: 2px #d99472;
+    color: white;
+
+}
+.win-modal p {
+    margin-top: -1vmin;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 5.5vmin;
+    -webkit-text-stroke: 2px #ddb559;
+    color: white;
+
+}
+.lose-modal p {
+    margin-top: -1vmin;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    -webkit-text-stroke: 2px #ddb559;
+    color: white;
+    font-size: 3.5vmin;
+}
+
+.win-modal p {
+    margin-top: 0;
+    font-size: 4vmin;
+    margin-bottom: 2vmin;
+}
+
+.intro-modal p {
+    color:lightgrey;
+    -webkit-text-stroke: 0px;
+    font-size: 1.5vmin;
+    width: 47vmin;
+    padding: 1vmin;
+    line-height: 135%;
+}
+
+.image-container {
+    position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+}
+
+.icon-img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(44, 44, 44, 0.8), rgba(237, 235, 235, 0.8));
+    margin-right: -20px;
+    z-index: 1;
+    padding-left: 250px;
+    
+}
+
+button {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    background: #7a5b3c;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    outline-offset: 4px;
+    width: 25vmin;
+}
+
+button:active .front {
+    transform: translateY(-2px);
+}
+
+.front {
     display: block;
-    text-align: center;
-    z-index: 9999;
-}
-#intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border: 10px solid grey;
-    justify-content: center;
-    width: 50%;
-    height: 20%;
-    position: relative;
-    border-radius: 25px;
-    border-style: double;
-    margin: 0 auto;
-    margin-top: 20%;
-}
-#levels {
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border: 10px solid grey;
-    justify-content: center;
-    width: 50%;
-    height: 20%;
-    position: relative;
-    margin: 0 auto;
-    border-radius: 25px;
-    border-style: double;
-    margin-top: 20%;
-}
-input:focus {
-    background-color: transparent;
-    border-color: #999;
-    opacity: 30%;
-    outline: none;
-}
-input:not(:placeholder-shown) {
-    font-size: 10px;
-    color:black;
+    padding: 14px;
+    border-radius: 12px;
+    background: #ddb559;
+    color: white;
+    transform: translateY(-6px);
     font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    padding: 10px;
-    background-color: transparent;
-}
-#name {
-    position: absolute;
-    bottom: 50%;
-    right: 40%;
-    font-size: 60px;
-    width: 20%;
-    height: 5%;
-    margin-bottom: 20px;
-    background-color: transparent;
-    color: rgb(175, 111, 7);
-    border: none;
-    border-radius: 25px;
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    padding-left: 5%;
+    font-size: 2vmin;
 }
-#startBtn {
+
+.front:before {
+    content: '';
+    width: 80px;
+    height: 300%;
+    border: none ;
     position: absolute;
-    bottom: 40%;
-    right: 40%;
-    background-color: transparent;
-    border-radius: 15px;
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    width: 20%;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%) rotate(35deg);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 100%);
+    animation: shine 3s infinite;
 }
-.next-btn, #readyBtn {
-    position: absolute;
-    font-size: 20px;
-    bottom: 0;
-    right: 0;
-    background-image: linear-gradient(to right, #7a5b3c, #d2bea9);
-    color: #fafbfd;
-    border: none;
-    border-radius: 15px;
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    border-style: double;
-    margin: 1.5%;
+
+#replay, #play-again, #ready {
+    margin: 20%;
 }
-#professorText, #levels>p {
-    font-size: 24px;
-    color:#7a5b3c;
-    font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    padding: 3%;
+
+#play-again {
+    left: 20%;
+    top: -25%;
 }
-.level-btn {
-    display: inline-block;
-    margin: 10px;
-    height: 70px;
-    width: 20%;
+
+#replay {
+    left: 10%;
+    top: -20%;
+}
+
+.invitation {
+    --triangle-size: 3vmin;
+    background:rgba(0.15, 0.15, 0.15, 0.15);
+    border-radius: 10%;
+    position: relative;
+    animation: enlarge 5s ease;
+    transform-origin: 50% calc(100% + var(--triangle-size));
+    flex: 1;
+}
+
+.invitation img {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+}
+
+#replay:hover, #play-again:hover, #read:hover {
+    transform: scale(1.2);
+    transition: transform 150ms;
+    opacity: 100%;
+}
+
+h1 {
+    margin-top: 3vmin;
     font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 15px;
-    border-radius: 25px;
+    font-style: normal;
+    font-size: 3.5vmin;
+    color: #f5f4f2;
 }
-.level-btn.selected {
-    background-color: darkgrey;
+
+.timer, h2 {
+    color: #b17702;
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+    position: absolute;
     color: lightgrey;
+    right: 20px;
+    z-index: 1000;
+    font-style: normal;
+    font-size: 2.5vmin;
 }
-#gameLogo img {
+
+.timer {
+    margin-top: 2vmin;
+}
+h2 {
+    top: 175px;
+
+}
+#game-logo img {
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 1000;
-}
-#gameLogo img {
     width: 30vmin;
     height: auto;
 }
-.gameContainer {
-    text-align: center;
-}
-.cards {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 5px;
-    width: 80vmin;
-    height: 80vmin;
-}
-.cardMatchGrid {
-    border: 1px solid white;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #000;
-}
-.cards > div.revealed {
-    background-color: transparent;
-}
-.soundtrack {
+h3 {
     position: absolute;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-.userInfo, .stats {
-    width: 22%;
+    top: 75px;
+    color: lightgrey;
+    right: 20px;
+    z-index: 1000;
     font-family: "Jost", sans-serif;
-    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vmin;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 15vmin);
+    grid-template-rows: repeat(4, 15vmin);
+    grid-gap: 1vmin;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-bottom: 5vmin;
+}
+
+main img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+main img:hover {
+    transform: scale(1.1);
+    transition: transform 150ms;
+}
+
+footer {
+    font-family: "Jost", sans-serif;
     font-weight: 200;
     font-style: normal;
-    overflow-y: auto;
-}
-.userInfo {
-    width: 18%;
-    overflow-y: auto;
-    height: 100%;
-    float: right;
-    padding: 10px;
-    position: absolute;
-    margin-right: 0%;
-    top: 0;
-    right: 0;
-}
-#countdownTimer {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.stats {
-    height: 45%;
-    padding: 10px;
+    font-size: 1vmin;
+    letter-spacing: 2px;
+    color: #DADAEF;
     position: absolute;
     bottom: 0;
-    left: 0;
+    width: 100%;
+    height: 2vmin;
+    text-align: center;
 }
-.stats > div {
-    margin-top: 80px;
-    margin-bottom: 20px;
+
+a {
+    color: #DADAEF;
+    text-decoration: none;
 }
-#title {
-    font-family: "MedievalSharp", cursive;
-    font-weight: 400;
-    font-size: 60px;
-    font-style: normal;
+
+a:hover {
+    text-decoration: underline;
+    color: white;
 }
-#timeElapsed {
-    padding: 10px;
+  
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
 }
-#moves {
-    padding: 10px;
+
+@keyframes zoom {
+    from { transform: scale(.75); }
+    50% { transform: scale(1); }
+    to { transform: scale(.75); }
+  }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1 }
 }
-#accuracy {
-    padding: 10px;
+
+@keyframes enlarge {
+    0% { transform: scale3d(0.75,0.75,1) rotate3d(0,0,0,0); opacity: 0 }
+    100% { transform: scale3d(1,1,1) rotate3d(0,0,0,0) translate3d(0,0em,0); opacity: 1 }
 }
-#averageMatchTime {
-    padding: 10px;
+
+@keyframes shine {
+    from {
+      left: -50%;
+    }
+    to {
+      left: 100%;
+    }
 }
-#memoryRecall {
-    padding: 10px;
-}
+
+@media screen and (max-width: 850px) {
+
+    body {
+        viewport-fit: cover;
+    }
+    
+    main {
+        grid-template-columns: repeat(5, 19vmin);
+        grid-template-rows: repeat(4, 25vmin);
+        margin-bottom: 0vmin;
+        padding: 3vmin;
+    }
+
+    main img {
+        width: 18vmin;
+    }
+
+    .timer, h2 {
+        font-size: 3vmin;
+    }
+
+    .timer {
+        margin-top: 5vmin;
+    }
+
+    .front {
+        font-size: 4vmin;
+    }
+
+    .lose-modal p {
+        top: 20%;
+        font-size: 8vmin;
+    }
+
+    .win-modal p {
+        font-size: 9.5vmin;
+        margin-bottom: 5vmin;
+    }
+
+    .intro-modal h1 {
+        font-size: 5.5vmin;
+        margin-top: 7vmin;
+    }
+
+    .intro-modal p {
+        font-size: 3.2vmin;
+        width: 75vmin;
+        padding: 3vmin;
+    }
+
+    .intro-modal img {
+        width: 65vmin;
+    }
+
+    .lose-modal img {
+        width: 60vmin;
+        margin-bottom: -3vmin;
+    }
+
+    .win-modal img {
+        width: 90vmin;
+    }
+
+    button {
+        width: 52vmin;
+    }
+
+    footer {
+        height: 3vmin;
+        font-size: 1.5vmin;
+    }
+  }
