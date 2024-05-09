@@ -16,8 +16,8 @@ const SOURCE_CARDS = [
   const startSound = new Audio('mp3/FTF Start.wav');
   const clickSound = new Audio('mp3/FTF Ding.wav');
   const matchSound = new Audio('mp3/FTF Correct.wav');
-  const loseSound = new Audio('mp3/FTF Lose.wav')
-  const winSound = new Audio('mp3/FTF Win.wav');
+  const loseSound = new Audio('mp3/FTF Lose louder.wav')
+  const winSound = new Audio('mp3/FTF Win louder.wav');
   const wrongSound = new Audio('mp3/FTF Wrong.wav');
   
   let cards, selectedCard, ignoreClicks, matches, seconds, chances;
