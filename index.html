@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find The Fraud!</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
@@ -14,12 +14,12 @@
         rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="screen1" class="messageContainer">
         <form id="input-form">
-            <input type="text" id="name" placeholder="Enter Your Name..." required>
+            <input type="text" id="name" placeholder="Name..." required>
             <input type="button" id="startBtn" value="START">
         </form>
     </div>
@@ -44,30 +44,9 @@
             <button class="soundtrack" id="soundStop">STOP</button>
         </div>
         <div class="userInfo">
-            <h1 id="title">FIND THE FRAUD</h1>
+            <div id="gameLogo"><img src="img/gameLogo.png"></div>
             <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
             <h2 id="player">PROFESSOR:</h2>
-            <h2 id="difficulty">LEVEL:</h2>
-            <h2 id="countdownTimer">00:00</h2>
-        </div>
-        <div class="cards">
-        </div>
-        <div class="stats">
-            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
-            <div id="moves">MOVES:</div>
-            <div id="accuracy">ACCURACY:</div>
-            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
-        </div>
-    </div>
-    <div id="screen5" class="container" style="display: none;">
-        <div class="soundtrack" style="display:none;">
-            <button class="soundtrack" id="sound">PLAY</button>
-            <button class="soundtrack" id="soundStop">STOP</button>
-        </div>
-        <div class="userInfo">
-            <h1 id="title">FIND THE FRAUD</h1>
-            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
-            <div id="player">PLAYER NAME:</div>
             <div id="difficulty">LEVEL:</div>
             <div id="countdownTimer">00:00</div>
         </div>
@@ -78,43 +57,6 @@
             <div id="moves">MOVES:</div>
             <div id="accuracy">ACCURACY:</div>
             <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
-        </div>
-    </div>
-    <div id="screen6" class="container" style="display: none;">
-        <div class="soundtrack" style="display:none;">
-            <button class="soundtrack" id="sound">PLAY</button>
-            <button class="soundtrack" id="soundStop">STOP</button>
-        </div>
-        <div class="userInfo">
-            <h1 id="title">FIND THE FRAUD</h1>
-            <h2 id="hieroglyphs">𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h2>
-            <div id="player">PLAYER NAME:</div>
-            <div id="difficulty">LEVEL:</div>
-            <div id="countdownTimer">00:00</div>
-        </div>
-        <div class="cards">
-        </div>
-        <div class="stats">
-            <div id="timeElapsed">TIME ELAPSED: <span id="timeValue">0</span> min</div>
-            <div id="moves">MOVES:</div>
-            <div id="accuracy">ACCURACY:</div>
-            <div id="averageMatchTime">AVERAGE MATCH TIME:</div>
-        </div>
-    </div>
-    <div id="screen7" class="container" style="display: none;">
-        <div id="authenticationInfo">
-        </div>
-    </div>
-    <div id="screen8" class="container" style="display: none;">
-        <div id="authenticationGrid">
-        </div>
-    </div>
-    <div id="screen9" class="container" style="display: none;">
-        <div id="authenticationGrid">
-        </div>
-    </div>
-    <div id="screen10" class="container" style="display: none;">
-        <div id="authenticationGrid">
         </div>
     </div>
     <div id="screen11" class="container" style="display: none;">

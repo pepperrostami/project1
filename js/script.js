@@ -8,18 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const readyBtn = document.getElementById("readyBtn");
     const userInfo = document.getElementById("userInfo");
     const cardsContainer = document.querySelector('.cards');
-    const playerLevelDisplay = document.getElementById("difficulty");
+    const countdownTimer = document.getElementById("countdownTimer");
 
     const screen1 = document.getElementById("screen1");
     const screen2 = document.getElementById("screen2");
     const screen3 = document.getElementById("screen3");
     const screen4 = document.getElementById("screen4");
 
-    let playerName = "";
-    let selectedLevel = "";
-    let levelSelected = false;
-
-    const cardData1 = [
+    const cardData = [
         { image: "Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"},
         {image: "Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png"},
         {image: "Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png"},
@@ -39,7 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
         {image: "Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png"},
         {image: "Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png"}   
     ];
-    const flippedCards = [];
+
+    let playerName = "";
+    let selectedLevel = "";
+    let levelSelected = false;
 
     //1. name screen - user enters name. pressing 'start game' after entering name makes name window disappear and game intro appear
     startBtn.addEventListener("click", function (event) {
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 button.classList.add("selected");
                 selectedLevel = button.textContent;
                 levelSelected = true;
-                playerLevelDisplay.textContent = selectedLevel;
                 console.log("Selected Level:", selectedLevel);
             } else {
                 levelSelected = false;
@@ -85,16 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
             playerText.textContent = "PROFESSOR " + playerName;
             userInfo.textContent = "Player: " + playerName;
             startCountdown();
-    //need to replace with something other than alerts
         } else {
             alert("Please enter your name.");
         }
         } else {
-            const levelErrorMessage = document.createElement('p');
-            levelErrorMessage.textContent = "Please select how many galleries you'd like to tackle.";
-            levelErrorMessage.style.color = 'red';
-            levelErrorMessage.style.fontWeight = 'bold';
-            document.getElementById('levels').appendChild(levelErrorMessage);
+            alert("Please select how many galleries you'd like to tackle.");
         }
     });
 
@@ -102,109 +95,32 @@ document.addEventListener("DOMContentLoaded", function () {
     //card gallery
     //36 cards, 18 artifacts - can be turned over 2 at a time by user clicking on card
     //If 3rd card is clicked, other 2 exposed cards turn back over
-    function shuffle(array) {
-        for (let i = array.length -1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    const duplicatedCardData1 = [{ image: "Card Images/01.Man_carrying_a_box,_possibly_for_offerings_ca._2900–2600_BCE_Sumer.png"},
-    {image: "Card Images/02.Head_of_Gudea_(Metropolitan_Museum_of_Art).png"},
-    {image: "Card Images/03.Statue_of_Gudea,_Metropolitan_Museum_of_Art.png"},
-    {image: "Card Images/04.Human-headed_bison_Neo-Sumerian_circa_2080_BCE.png"},
-    {image: "Card Images/05.Ringstone_MET_DT9196.png"},
-    {image: "Card Images/06.Cocoon-Shaped_Jar_Han_dynasty.png"},
-    {image: "Card Images/07.Scepter_(MET_collection).png"},
-    {image: "Card Images/08.Whip_Handle_in_the_Shape_of_a_Horse_1390-1353_BCE.png"},
-    {image: "Card Images/09.Sarmatian_cup_with_animal_handle_(1st_century_CE,_reproduction).png"},
-    {image: "Card Images/10.Old_Assyrian_drinking_vessel_Kültepe.png"},
-    {image: "Card Images/11.Etruscan_bronze_funerary_urn_with_Scythian_mounted_archer,_mid-5th_century_BCE.png"},
-    {image: "Card Images/12.Terracotta_skyphos.png"},
-    {image: "Card Images/13.AI-Restored_Head_of_an_Oba,_Benin_Bronze,_1550.png"},
-    {image: "Card Images/14.Cup_with_a_Poem_on_Wine._Ibn_Sukkara_al-Hashimi_(d._995–6_CE)._Buyid_dynasty._Iran.png"},
-    {image: "Card Images/15.Pyxis_attique_à_figures_rouges_MET.png"},
-    {image: "Card Images/16.Zeus_Ammon_Cyprus.png"},
-    {image: "Card Images/17.Kushano-Sasanian_footed_cup_with_medallion_3rd-4th_century_CE_Bactria_Metropolitan_Museum_of_Art.png"},
-    {image: "Card Images/18.Terret_(Rein_Guide)_Celtic_or_Roman_The_Metropolitan_Museum_of_Art.png"}];
-
-    shuffle(duplicatedCardData1);
-
-    duplicatedCardData1.forEach((data, index) => {
+    cardData.forEach((data, index) => {
         const card = document.createElement('div');
         card.classList.add('cardMatchGrid');
-        card.style.backgroundImage = `url(${data.image})`;
         card.dataset.image = data.image;
-
-        const blackSquare = document.createElement('div');
-        blackSquare.classList.add('black-square');
-
-        card.appendChild(blackSquare);
-
         card.addEventListener('click', function () {
-            blackSquare.classList.toggle('hidden');
+            this.classList.toggle('revealed');
         });
-        
         cardsContainer.appendChild(card);
     });
 
-    // cardsContainer.addEventListener('click', function (event) {
-    //     const clickedCard = event.target;
-    //     if (!clickedCard.classList.contains('matched') && flippedCards.length < 2 && !flippedCards.includes(clickedCard)) {
-    //         clickedCard.classList.add('flipped');
-    //         flippedCards.push(clickedCard);
+    const cards = document.querySelectorAll('.cards .card');
 
-    //         if (flippedCards.length === 2) {
-    //             const firstCardImage = flippedCards[0].dataset.image;
-    //             const secondCardImage = flippedCards[1].dataset.image;
-    //             if (firstCardImage === secondCardImage) {
-    //                 setTimeout(() => {
-    //                     flippedCards.forEach(card => {
-    //                         card.classList.remove('flipped');
-    //                         card.classList.add('matched');
-    //                         card.style.visibility = 'hidden';
-    //                     });
-    //                     flippedCards.length = 0;
-    //                 }, 1000);
-    //             } else {
-    //                 setTimeout(() => {
-    //                     flippedCards.forEach(card => {
-    //                         card.classList.remove('flipped');
-    //                     });
-    //                     flippedCards.length = 0;
-    //                 }, 1000);
-    //             }
-    //         }
-    //     }
-    // });
+    cards.forEach(card => {
+        card.style.backgroundImage = 'url("Card Images/black-square-1000x750mm.png")';
+    });
 
-    // cardData1.forEach((data, index) => {
-    //     const card = document.createElement('div');
-    //     card.classList.add('cardMatchGrid');
-    //     card.dataset.image = data.image;
-    //     card.addEventListener('click', function () {
-    //         this.classList.toggle('revealed');
-    //     });
-    //     cardsContainer.appendChild(card);
-    // });
-
-    // const cards = document.querySelectorAll('.cards .card');
-
-    // cards.forEach(card => {
-    //     card.style.backgroundImage = 'url("Card Images/black-square-1000x750mm.png")';
-    // });
-
-    // cards.forEach(card => {
-    //     card.addEventListener('click', function () {
-    //         const backgroundImage = getComputedStyle(card).backgroundImage;
-    //         if (backgroundImage === 'url("Card Images/black-square-1000x750mm.png")') {
-    //             card.style.backgroundImage = `url(${card.dataset.image})`;
-    //         } else {
-    //             card.style.backgroundImage = 'url("Card Images/black-square-1000x750mm.png")';
-    //         }
-    //     });
-    // });
+    cards.forEach(card => {
+        card.addEventListener('click', function () {
+            const backgroundImage = getComputedStyle(card).backgroundImage;
+            if (backgroundImage === 'url("Card Images/black-square-1000x750mm.png")') {
+                card.style.backgroundImage = `url(${card.dataset.image})`;
+            } else {
+                card.style.backgroundImage = 'url("Card Images/black-square-1000x750mm.png")';
+            }
+        });
+    });
     //basic info
     //game title & subtitle
     //user name carried over from screen 1

@@ -20,7 +20,7 @@ body {
     text-align: center;
     z-index: 9999;
 }
-#input-form, #intro {
+#intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,24 +49,33 @@ body {
     border-style: double;
     margin-top: 20%;
 }
-input::placeholder {
-    font-size: 24px; /* Change the font size of the placeholder text */
-    color:#7a5b3c;
+input:focus {
+    background-color: transparent;
+    border-color: #999;
+    opacity: 30%;
+    outline: none;
+}
+input:not(:placeholder-shown) {
+    font-size: 10px;
+    color:black;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    padding: 10px;
+    background-color: transparent;
 }
 #name {
     position: absolute;
+    bottom: 50%;
+    right: 40%;
     font-size: 60px;
-    width: 40%;
+    width: 20%;
+    height: 5%;
     margin-bottom: 20px;
-    height: 30%;
     background-color: transparent;
     color: rgb(175, 111, 7);
     border: none;
-    padding: 10px 20px;
     border-radius: 25px;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
@@ -74,14 +83,26 @@ input::placeholder {
     font-style: normal;
     padding-left: 5%;
 }
-#startBtn, .next-btn, #readyBtn {
+#startBtn {
     position: absolute;
+    bottom: 40%;
+    right: 40%;
+    background-color: transparent;
+    border-radius: 15px;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    width: 20%;
+}
+.next-btn, #readyBtn {
+    position: absolute;
+    font-size: 20px;
     bottom: 0;
     right: 0;
     background-image: linear-gradient(to right, #7a5b3c, #d2bea9);
     color: #fafbfd;
     border: none;
-    padding: 10px 20px;
     border-radius: 15px;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
@@ -91,31 +112,38 @@ input::placeholder {
     margin: 1.5%;
 }
 #professorText, #levels>p {
-    font-size: 24px; /* Change the font size of the placeholder text */
+    font-size: 24px;
     color:#7a5b3c;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     padding: 3%;
 }
 .level-btn {
     display: inline-block;
     margin: 10px;
+    height: 70px;
     width: 20%;
-    height: 25%;
     font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 20px;
-    border: 5px solid lightgrey;
-    border-radius: 15px;
-    border-style: outset;
-    color: darkgrey;
+    font-size: 15px;
+    border-radius: 25px;
 }
 .level-btn.selected {
-    background-color: rgb(134, 73, 4);
+    background-color: darkgrey;
     color: lightgrey;
+}
+#gameLogo img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+#gameLogo img {
+    width: 30vmin;
+    height: auto;
 }
 .gameContainer {
     text-align: center;
@@ -129,26 +157,13 @@ input::placeholder {
     height: 80vmin;
 }
 .cardMatchGrid {
-    position: relative;
     border: 1px solid white;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+    background-color: #000;
 }
-.black-square {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("Card Images/black-square-1000x750mm.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: opacity 0.25s ease-in-out;
-}
-.black-square.hidden {
-    opacity: 0;
+.cards > div.revealed {
+    background-color: transparent;
 }
 .soundtrack {
     position: absolute;
@@ -162,7 +177,6 @@ input::placeholder {
     font-weight: 200;
     font-style: normal;
     overflow-y: auto;
-    color: grey;
 }
 .userInfo {
     width: 18%;
@@ -174,13 +188,11 @@ input::placeholder {
     margin-right: 0%;
     top: 0;
     right: 0;
-    text-align: right;
 }
 #countdownTimer {
     position: absolute;
     top: 10px;
-    right: 10px;
-    margin-bottom: 15px;
+    left: 10px;
 }
 .stats {
     height: 45%;
@@ -188,9 +200,6 @@ input::placeholder {
     position: absolute;
     bottom: 0;
     left: 0;
-    font-size: 25px;
-    font-weight: 400;
-    text-align: left;
 }
 .stats > div {
     margin-top: 80px;
@@ -201,25 +210,19 @@ input::placeholder {
     font-weight: 400;
     font-size: 60px;
     font-style: normal;
-    margin-top: 100px;
 }
-
 #timeElapsed {
     padding: 10px;
 }
-
 #moves {
     padding: 10px;
 }
-
 #accuracy {
     padding: 10px;
 }
-
 #averageMatchTime {
     padding: 10px;
 }
-
 #memoryRecall {
     padding: 10px;
 }
