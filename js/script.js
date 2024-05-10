@@ -20,7 +20,10 @@ const SOURCE_CARDS = [
   const winSound = new Audio('mp3/FTF Win louder.wav');
   const wrongSound = new Audio('mp3/FTF Wrong.wav');
   
-  let cards, selectedCard, ignoreClicks, matches, seconds, chances;
+  let startTime, cards, selectedCard, ignoreClicks, matches, seconds, chances;
+  let numMoves = 0;
+  let totalMatches = 0;
+  let totalMatchTime = 0;
   
   const chancesEl = document.querySelector('h2');
   const timerEl = document.getElementById('counter');
@@ -30,12 +33,15 @@ const SOURCE_CARDS = [
   
   document.querySelector('main').addEventListener('click', handleChoice);
   document.getElementById('replay').addEventListener('click', replayGame);
-  document.getElementById('ready').addEventListener("click", startGame);
   document.getElementById('play-again').addEventListener('click', replayGame);
+document.getElementById('ready').addEventListener("click", function() {
+    startGame();
+    document.getElementById('game-screen').style.display = 'block';
+});
   
   play();
   
-  function play() {
+function play() {
   cards = getShuffledCards();
   selectedCard = null;
   ignoreClicks = false;
@@ -44,7 +50,7 @@ const SOURCE_CARDS = [
   matches = 0;
   winner = null;
   render();
-  }
+}
   
   function render() {
   cards.forEach(function (card, idx) {
@@ -109,9 +115,18 @@ const SOURCE_CARDS = [
     gameOver();
   }
   render();
+  toggleFlip(cardIdx);
+  }
+
+  function toggleFlip(cardIdx) {
+    const container = document.getElementById(`container-${cardIdx}`);
+    container.classList.add('flip');
+    setTimeout(() => {
+        container.classList.remove('flip');
+    }, 600);
   }
   
-  function startGame() {
+function startGame() {
     backgroundMusic.play();
     startSound.play();
     introModal.classList.add('hidden');
@@ -121,16 +136,17 @@ const SOURCE_CARDS = [
     startTimer();
     document.getElementById('game-logo').style.display = 'block';
     document.querySelector('h3').style.display = 'block';
+    document.getElementById('game-screen').classList.add('custom-cursor');
   }
   
-  function startTimer() {
+function startTimer() {
     function tick() {
       seconds--;
       render(seconds);
       }
       timeCount = setInterval(tick, 1000);
     }
-  
+
   function resetTimer() {
     clearInterval(timeCount);
     seconds = 60;
@@ -156,6 +172,7 @@ const SOURCE_CARDS = [
     chancesEl.style.visibility = 'visible';
     document.getElementById('game-logo').style.display = 'block';
     document.querySelector('h3').style.display = 'block';
+    document.getElementById('stats').style.display = 'block';
   }
   
   document.getElementById('play-again').addEventListener('click', replayGame);
@@ -169,4 +186,6 @@ const SOURCE_CARDS = [
     chancesEl.style.visibility = 'hidden';
     document.getElementById('game-logo').style.display = 'none';
     document.querySelector('h3').style.display = 'none';
+    document.getElementById('stats').style.display = 'none';
+    document.getElementById('game-screen').classList.remove('custom-cursor');
   }
