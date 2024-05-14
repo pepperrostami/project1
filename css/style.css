@@ -6,6 +6,37 @@
     cursor: url('img/lefticon.png'), auto;
 }
 
+#pause-music {
+    display: block;
+    position: absolute;
+    top: 15px;
+    color: lightgrey;
+    left: -30px;
+    z-index: 1000;
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5vmin;
+    background-color: transparent;
+    width: 8%;
+
+}
+#with-music {
+    display: none;
+    position: absolute;
+    top: 15px;
+    color: lightgrey;
+    left: -50px;
+    z-index: 1000;
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.5vmin;
+    background-color: transparent;
+    width: 8%;
+
+}
+
 body {
     height: 100vh;
     display: flex;

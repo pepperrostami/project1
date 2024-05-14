@@ -18,6 +18,8 @@ const artObjects = [
 const objectCover = 'img/black-square-1000x750mm.png';
 
 const backgroundMusic = document.getElementById('background-music');
+const pauseButton = document.getElementById('pause-music');
+const withSoundButton = document.getElementById('with-music');
 const startSound = new Audio('mp3/FTF Start.wav');
 const clickSound = new Audio('mp3/FTF Ding.wav');
 const matchSound = new Audio('mp3/FTF Correct.wav');
@@ -44,6 +46,26 @@ document.getElementById('play-again').addEventListener('click', replayGame);
 document.getElementById('ready').addEventListener("click", function () {
     startGame();
     document.getElementById('game-screen').style.display = 'block';
+});
+
+function toggleSound(play) {
+    if (play) {
+        backgroundMusic.play();
+        pauseButton.style.display = "block";
+        withSoundButton.style.display = "none";
+    } else {
+        backgroundMusic.pause();
+        pauseButton.style.display = "none";
+        withSoundButton.style.display = "block";
+    }
+}
+
+pauseButton.addEventListener('click', function() {
+    toggleSound(false);
+});
+
+withSoundButton.addEventListener('click', function() {
+    toggleSound(true);
 });
 
 play();
