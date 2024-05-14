@@ -181,6 +181,12 @@ function startGame() {
 function startTimer() {
     function tick() {
         seconds--;
+        if (seconds <= 0) {
+            seconds = 0;
+            gameOver();
+            clearInterval(timeCount);
+            return;
+        }
         render(seconds);
         counter++;
         render(counter);
@@ -218,6 +224,8 @@ function replayGame() {
     document.getElementById('game-logo').style.display = 'block';
     document.querySelector('h3').style.display = 'block';
     document.getElementById('stats').style.display = 'block';
+    document.getElementById('pause-music').style.display = 'block';
+    document.getElementById('with-music').style.display = 'none';
     numMoves = 0;
     dupes = 0;
     updateAccuracy();
