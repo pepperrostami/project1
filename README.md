@@ -66,3 +66,21 @@ Created by Pepper Rostamizadeh
             16. "File:Zeus Ammon Cyprus.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             17. "File:Kushano-Sasanian footed cup with medallion 3rd-4th century CE Bactria Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             18. "Terret (Rein Guide) Celtic or Roman The Metropolitan Museum of Art" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
+
+# Screenshots:
+    refer to screenshots folder:
+
+    1. screenshots/01.welcome-screen-screenshot.png
+        -screenshot of welcome screen with intro to game concept
+
+    2. screenshots/02.game-screen-screenshot.png
+        - screenshot of game grid before user begins playing
+
+    3. screenshots/03.game-matchesfound-screenshot.png
+        - screenshot of game grid during game - some matches found
+
+    4. screenshots/04.lose-screen-screenshot.png
+        - screenshot of lose message to player
+
+    5. screenshots/05.win-screen-screenshot.png
+        - screenshot of win message to player
