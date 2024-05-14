@@ -21,8 +21,8 @@ const backgroundMusic = document.getElementById('background-music');
 const startSound = new Audio('mp3/FTF Start.wav');
 const clickSound = new Audio('mp3/FTF Ding.wav');
 const matchSound = new Audio('mp3/FTF Correct.wav');
-const loseSound = new Audio('mp3/FTF Lose louder.wav')
-const winSound = new Audio('mp3/FTF Win louder.wav');
+const loseSound = new Audio('mp3/FTF Lose.wav')
+const winSound = new Audio('mp3/FTF Win.wav');
 const wrongSound = new Audio('mp3/FTF Wrong.wav');
 
 let accuracy, avgMatchTime, counter, cards, selectedCard, ignoreClicks, matches, seconds, chances;
@@ -211,7 +211,7 @@ function gameOver() {
     loseModal.classList.add('show');
     timerDisplay.style.visibility = 'hidden';
     chancesDisplay.style.visibility = 'hidden';
-    document.getElementById('game-logo').style.display = 'none';
+    document.getElementById('game-logo').style.display = 'block';
     document.querySelector('h3').style.display = 'block';
     document.getElementById('stats').style.display = 'block';
     document.getElementById('game-screen').classList.remove('custom-cursor');
