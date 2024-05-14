@@ -20,19 +20,12 @@ const objectCover = 'img/black-square-1000x750mm.png';
 const backgroundMusic = document.getElementById('background-music');
 const pauseButton = document.getElementById('pause-music');
 const withSoundButton = document.getElementById('with-music');
-const startSound = new Audio('mp3/FTF Start.wav');
-const clickSound = new Audio('mp3/FTF Ding.wav');
-const matchSound = new Audio('mp3/FTF Correct.wav');
-const loseSound = new Audio('mp3/FTF Lose.wav')
-const winSound = new Audio('mp3/FTF Win.wav');
-const wrongSound = new Audio('mp3/FTF Wrong.wav');
-
-let accuracy, avgMatchTime, counter, cards, selectedCard, ignoreClicks, matches, seconds, chances;
-let numMoves = 0;
-let dupes = 0;
-let totalMatches = 0;
-let totalMatchTime = 0;
-
+const startGameSound = new Audio('mp3/FTF Start-Game.wav');
+const selectSound = new Audio('mp3/FTF Select.wav');
+const dupeFoundSound = new Audio('mp3/FTF Dupe-Found.wav');
+const noMatchSound = new Audio('mp3/FTF No-Match.wav');
+const winGameSound = new Audio('mp3/FTF Win-Game.wav');
+const loseGameSound = new Audio('mp3/FTF Lose-Game.wav')
 const chancesDisplay = document.querySelector('h2');
 const timerDisplay = document.getElementById('timer');
 const counterDisplay = document.getElementById('time-elapsed');
@@ -40,9 +33,16 @@ const introModal = document.getElementById('intro-modal-container');
 const loseModal = document.getElementById('lose-modal-container');
 const winModal = document.getElementById('win-modal-container');
 
-document.querySelector('main').addEventListener('click', handleChoice);
+let accuracy, avgMatchTime, chances, counter, seconds, objects, selectedObject, matches, ignoreClicks;
+let numMoves = 0;
+let dupes = 0;
+let totalMatches = 0;
+let totalMatchTime = 0;
+
+document.querySelector('grid').addEventListener('click', selectionDetermination);
 document.getElementById('replay').addEventListener('click', replayGame);
 document.getElementById('play-again').addEventListener('click', replayGame);
+
 document.getElementById('ready').addEventListener("click", function () {
     startGame();
     document.getElementById('game-screen').style.display = 'block';
@@ -71,21 +71,21 @@ withSoundButton.addEventListener('click', function() {
 play();
 
 function play() {
-    cards = getShuffledCards();
-    selectedCard = null;
+    objects = getShuffledObjects();
+    selectedObject = null;
+    winner = null;
     ignoreClicks = false;
-    seconds = 90;
     counter = 0;
+    seconds = 90;
     chances = 30;
     matches = 0;
-    winner = null;
     render();
 }
 
 function render() {
-    cards.forEach(function (card, idx) {
+    objects.forEach(function (object, idx) {
         const imgEl = document.getElementById(idx);
-        const src = (card.matched || card === selectedCard) ? card.img : objectCover;
+        const src = (object.matched || object === selectedObject) ? object.img : objectCover;
         imgEl.src = src;
     });
     chancesDisplay.innerHTML = `chances: ${chances}/30`;
@@ -95,45 +95,45 @@ function render() {
     document.getElementById('dupes').textContent = dupes;
 }
 
-function getShuffledCards() {
-    let tempCards = [];
-    let cards = [];
-    for (let card of artObjects) {
-        tempCards.push({ ...card }, { ...card });
+function getShuffledObjects() {
+    let tempObjects = [];
+    let objects = [];
+    for (let object of artObjects) {
+        tempObjects.push({ ...object }, { ...object });
     }
-    while (tempCards.length) {
-        let rndIdx = Math.floor(Math.random() * tempCards.length);
-        let card = tempCards.splice(rndIdx, 1)[0];
-        cards.push(card);
+    while (tempObjects.length) {
+        let rndIdx = Math.floor(Math.random() * tempObjects.length);
+        let object = tempObjects.splice(rndIdx, 1)[0];
+        objects.push(object);
     }
-    return cards;
+    return objects;
 }
 
-function handleChoice(evt) {
-    const cardIdx = parseInt(evt.target.id);
-    const card = cards[cardIdx];
-    if (ignoreClicks || isNaN(cardIdx) || card.matched) return;
-    clickSound.play();
-    if (selectedCard && selectedCard === card) {
-        selectedCard = null;
-    } else if (selectedCard) {
-        if (card.img === selectedCard.img) {
-            card.matched = selectedCard.matched = true;
-            matchSound.play();
-            selectedCard = null;
-            winner = cards.every(card => card.matched);
+function selectionDetermination(evt) {
+    const objectIdx = parseInt(evt.target.id);
+    const object = objects[objectIdx];
+    if (ignoreClicks || isNaN(objectIdx) || object.matched) return;
+    selectSound.play();
+    if (selectedObject && selectedObject === object) {
+        selectedObject = null;
+    } else if (selectedObject) {
+        if (object.img === selectedObject.img) {
+            object.matched = selectedObject.matched = true;
+            dupeFoundSound.play();
+            selectedObject = null;
+            winner = objects.every(object => object.matched);
             dupes++;
             updateAccuracy();
             updateAverageMatchTime();
         } else {
             ignoreClicks = true;
-            card.matched = true;
+            object.matched = true;
             chances--;
             setTimeout(function () {
                 ignoreClicks = false;
-                selectedCard = null;
-                card.matched = false;
-                wrongSound.play();
+                selectedObject = null;
+                object.matched = false;
+                noMatchSound.play();
                 render();
             }, 800);
         }
@@ -141,7 +141,7 @@ function handleChoice(evt) {
         updateAccuracy();
         updateAverageMatchTime();
     } else {
-        selectedCard = card;
+        selectedObject = object;
     }
     if (chances <= 0) {
         gameOver();
@@ -154,11 +154,11 @@ function handleChoice(evt) {
         gameOver();
     }
     render();
-    toggleFlip(cardIdx);
+    toggleFlip(objectIdx);
 }
 
-function toggleFlip(cardIdx) {
-    const container = document.getElementById(`container-${cardIdx}`);
+function toggleFlip(objectIdx) {
+    const container = document.getElementById(`container-${objectIdx}`);
     container.classList.add('flip');
     setTimeout(() => {
         container.classList.remove('flip');
@@ -167,7 +167,7 @@ function toggleFlip(cardIdx) {
 
 function startGame() {
     backgroundMusic.play();
-    startSound.play();
+    startGameSound.play();
     introModal.classList.add('hidden');
     winModal.classList.remove('show');
     loseModal.classList.remove('show');
@@ -184,6 +184,7 @@ function startTimer() {
         if (seconds <= 0) {
             seconds = 0;
             gameOver();
+            resetTimer();
             clearInterval(timeCount);
             return;
         }
@@ -196,18 +197,20 @@ function startTimer() {
 
 function resetTimer() {
     clearInterval(timeCount);
-    seconds = 60;
+    seconds = 90;
     counter = 0;
     render(seconds);
     render(counter);
 }
 
 function winGame() {
-    winSound.play();
-    selectedCard = null;
+    winGameSound.play();
+    selectedObject = null;
     winModal.classList.add('show');
     timerDisplay.style.visibility = 'hidden';
     chancesDisplay.style.visibility = 'hidden';
+    resetTimer();
+    clearInterval(timeCount);
     document.getElementById('game-logo').style.display = 'block';
     document.querySelector('h3').style.display = 'block';
     accuracy = 0;
@@ -236,8 +239,8 @@ document.getElementById('play-again').addEventListener('click', replayGame);
 document.getElementById('replay').addEventListener('click', replayGame);
 
 function gameOver() {
-    loseSound.play();
-    selectedCard = null;
+    loseGameSound.play();
+    selectedObject = null;
     loseModal.classList.add('show');
     timerDisplay.style.visibility = 'hidden';
     chancesDisplay.style.visibility = 'hidden';

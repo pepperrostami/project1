@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width">
         <title>Find The Fraud!</title>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <script defer src="js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=MedievalSharp&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>   
+        <script defer src="js/script.js"></script>
     </head>
+    <body>
     <audio id="background-music" loop>
         <source src="mp3/FTF Theme.mp3" type="audio/mp3">
     </audio>
@@ -52,7 +53,6 @@
             </button>
         </div>
     </div>
-    <body>
         <div id="game-screen">
             <div id="info-container">
                 <h3>𓌙𓆓𓁶𓌅 𓊽𓈖𓉐𓌅𓁹 𓂋𓁶𓂝𓂧𓏴 𓁹𓆓</h3>
@@ -60,7 +60,7 @@
                 <span class="timer" id="timer"></span>
                 <h2></h2>
             </div>
-            <main>
+            <grid>
                     <img src="" id="0" alt="">
                     <img src="" id="1" alt="">
                     <img src="" id="2" alt="">
@@ -91,7 +91,7 @@
                     <img src="" id="27" alt="">
                     <img src="" id="28" alt="">
                     <img src="" id="29" alt="">
-          </main>
+            </grid>
           <div id="stats">
             <p>Time Elapsed: <span id="time-elapsed">0:00</span></p>
             <p>Number of Moves: <span id="num-moves">0</span></p>
