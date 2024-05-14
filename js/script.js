@@ -47,23 +47,9 @@ document.getElementById('ready').addEventListener("click", function () {
     startGame();
     document.getElementById('game-screen').style.display = 'block';
 });
-
-function toggleSound(play) {
-    if (play) {
-        backgroundMusic.play();
-        pauseButton.style.display = "block";
-        withSoundButton.style.display = "none";
-    } else {
-        backgroundMusic.pause();
-        pauseButton.style.display = "none";
-        withSoundButton.style.display = "block";
-    }
-}
-
 pauseButton.addEventListener('click', function() {
     toggleSound(false);
 });
-
 withSoundButton.addEventListener('click', function() {
     toggleSound(true);
 });
@@ -80,6 +66,18 @@ function play() {
     chances = 30;
     matches = 0;
     render();
+}
+
+function toggleSound(play) {
+    if (play) {
+        backgroundMusic.play();
+        pauseButton.style.display = "block";
+        withSoundButton.style.display = "none";
+    } else {
+        backgroundMusic.pause();
+        pauseButton.style.display = "none";
+        withSoundButton.style.display = "block";
+    }
 }
 
 function render() {
@@ -234,9 +232,6 @@ function replayGame() {
     updateAccuracy();
     updateAverageMatchTime()
 }
-
-document.getElementById('play-again').addEventListener('click', replayGame);
-document.getElementById('replay').addEventListener('click', replayGame);
 
 function gameOver() {
     loseGameSound.play();

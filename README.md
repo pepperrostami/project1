@@ -5,22 +5,39 @@
 Created by Pepper Rostamizadeh
 
 # Concept & Description:
+    A game of concentration but thematically in a museum context similar to the Met. The premise is that "fraudsters" have filled the museum with duplicates. The objective of the game is to look through the display cases in the archives and find the duplicates, so they can be compared and the fake can be identified.
 
 # How To:
+    Once intro screen has been read, when user presses 'Ready' button, they are brought to the game screen.
+
+    On the game screen, there is a grid of 30 tiles - each one is meant to look like a display case. The user must click on tiles to make the contents of the case visible, but they can only see two cases' contents at a time.
+
+    The player must use their memory to "find the dupes" amongst the grid. When a match is found, that image will stay on the screen and will no longer be covered by the display glass.
+
+    The player wins when all dupes are found "before the museum has to open" - 90 seconds.
+
+    There are also a limited number of chances given to the player - 30.
 
 # Languages Used:
+    - HTML
+    - CSS
+    - JAVASCRIPT
 
 # Future Features:
+    - Load screen with user name input - name of player to be incorporated throughout game
+    - Level selection: 1 gallery, 2 galleries, 3 galleries, each with different time limits and different difficulty levels depending on visual similiarities of objects
+    - 'Phase 2' - authentication. All duplicates that user has found now have to be authenticated by the player - I like the idea of an "invisible ink" authentication seal or something similar on each object, and the player's mouse becomes a blacklight icon, and they have to wave it over the object to find the seal. This would also be in a given amount of time "before the museum opens" or something similar.
+    - I would love to figure out how to make the background video play as a video, rather than be a still frame of the video.
 
 # Notes & Easter Eggs:
     - The title (upper right corner) on the main game screen says 'Find The Fraud' in a phonetic old latin alphabet
 
     - The subtitle on the main game screen is a phonetic transliteration of Egyptian hieroglyphs roughly spelling out "general assembly project one" - gnrl smbl(eye) prjkt(eye)n
 
-Credits:
+# Credits:
     - AUDIO
         1. Original theme music 'FTF Theme' created by Aria Rostamizadeh - influenced by Chrono Trigger OST soundtrack
-        2. All SFX: 'Match', 'No-Match', 'Select', 'Start', 'Win' and 'Lose' original files created by Aria Rostamizadeh.
+        2. All SFX: 'Dupe-Found', 'No-Match', 'Select', 'Start-Game', 'Win-Game' and 'Lose-Game' original files created by Aria Rostamizadeh.
 
     - GFX
         1. Background: still from licensed Adobe stock video: https://stock.adobe.com/
@@ -28,8 +45,9 @@ Credits:
         2. Magnifying Glass: creative commons graphic created by pendragon1966, uploaded to    Deviant Art: https://www.deviantart.com/pendragon1966/art/Steampunk-Victorian-Magnifying-glass-Icon-Mk5-331089780
         3. Black square graphic: original graphic created in Photoshop
         4. Win seal: public domain graphic from rawpixel.com: https://www.rawpixel.com/image/10163078/png-white-background-plant#eyJrZXlzIjoiZ29sZCB3cmVhdGgiLCJzb3J0ZWRLZXlzIjoiZ29sZCB3cmVhdGgifQ==
+
     - ARTIFACT IMAGES sourced from The Metropolitan Museum of Art Open Access project.
-        https://github.com/metmuseum/openaccess :
+         https://github.com/metmuseum/openaccess :
             1. "Man carrying a box, possibly for offerings ca. 2900–2600 BCE Sumer" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             2. "File:Head of Gudea (Metropolitan Museum of Art).jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             3. "File:Statue of Gudea, Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
@@ -48,5 +66,3 @@ Credits:
             16. "File:Zeus Ammon Cyprus.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             17. "File:Kushano-Sasanian footed cup with medallion 3rd-4th century CE Bactria Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
             18. "Terret (Rein Guide) Celtic or Roman The Metropolitan Museum of Art" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
-
-# References:
