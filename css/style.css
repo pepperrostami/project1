@@ -192,7 +192,8 @@ body {
 .intro-modal p {
     color:lightgrey;
     -webkit-text-stroke: 0px;
-    font-size: 1.5vmin;
+    margin-top: 3vmin;
+    font-size: 2.5vmin;
     width: 47vmin;
     padding: 1vmin;
     line-height: 135%;
@@ -461,7 +462,7 @@ a:hover {
 
     .intro-modal h1 {
         font-size: 5.5vmin;
-        margin-top: 7vmin;
+        margin-top: 3vmin;
     }
 
     .intro-modal p {
