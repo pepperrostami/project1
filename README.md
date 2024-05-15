@@ -20,9 +20,9 @@ A game of concentration but thematically in a museum context similar to the Met.
 5. There are also a limited number of chances given to the player - 30.
 
 ### Languages Used:
-* HTML
-* CSS
-* JAVASCRIPT
+* [HTML](index.html)
+* [CSS](css/style.css)
+* [JAVASCRIPT](js/script.js)
 
 ### Future Features:
 * Load screen with user name input - name of player to be incorporated throughout game
@@ -40,9 +40,9 @@ A game of concentration but thematically in a museum context similar to the Met.
 
 ### Credits:
 ## AUDIO
-1. Original theme music 'FTF Theme' created by Aria Rostamizadeh - influenced by Chrono Trigger OST soundtrack
+1. Original theme music 'FTF Theme' created by [Aria Rostamizadeh](https://www.ariarostami.com/) - influenced by Chrono Trigger OST soundtrack
 
-2. All SFX: 'Dupe-Found', 'No-Match', 'Select', 'Start-Game', 'Win-Game' and 'Lose-Game' original files created by Aria Rostamizadeh.
+2. All SFX: 'Dupe-Found', 'No-Match', 'Select', 'Start-Game', 'Win-Game' and 'Lose-Game' original files created by [Aria Rostamizadeh](https://www.ariarostami.com/).
 
 ## GFX
 * Background: still from licensed [Adobe Stock](https://stock.adobe.com/) video. [Media Link](https://fotolia-prod-videos-0.s3.eu-west-1.amazonaws.com/03/94/69/36/F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.video?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUMGGMQGEWGREN62H%2F20240504%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240504T214355Z&X-Amz-Expires=3600&X-Amz-Signature=ebb4f99632e22f83862e43bf642926abc3464d6d84efd3f5620df5145c011ef6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DAdobeStock_394693644.mov)
