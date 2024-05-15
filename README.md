@@ -45,30 +45,42 @@ A game of concentration but thematically in a museum context similar to the Met.
 2. All SFX: 'Dupe-Found', 'No-Match', 'Select', 'Start-Game', 'Win-Game' and 'Lose-Game' original files created by Aria Rostamizadeh.
 
 ## GFX
-1. Background: still from licensed [Adobe Stock](https://stock.adobe.com/) video. [MEDIA LINK](https://fotolia-prod-videos-0.s3.eu-west-1.amazonaws.com/03/94/69/36/F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.video?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUMGGMQGEWGREN62H%2F20240504%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240504T214355Z&X-Amz-Expires=3600&X-Amz-Signature=ebb4f99632e22f83862e43bf642926abc3464d6d84efd3f5620df5145c011ef6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DAdobeStock_394693644.mov)
+* Background: still from licensed [Adobe Stock](https://stock.adobe.com/) video. [Media Link](https://fotolia-prod-videos-0.s3.eu-west-1.amazonaws.com/03/94/69/36/F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.video?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUMGGMQGEWGREN62H%2F20240504%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240504T214355Z&X-Amz-Expires=3600&X-Amz-Signature=ebb4f99632e22f83862e43bf642926abc3464d6d84efd3f5620df5145c011ef6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DAdobeStock_394693644.mov)
 
-2. Magnifying Glass: creative commons graphic created by pendragon1966 via [Deviant Art](https://www.deviantart.com/pendragon1966/art/Steampunk-Victorian-Magnifying-glass-Icon-Mk5-331089780)
+* Magnifying Glass: creative commons graphic created by pendragon1966 via [Deviant Art](https://www.deviantart.com/pendragon1966/art/Steampunk-Victorian-Magnifying-glass-Icon-Mk5-331089780)
 
-3. Black Square Graphic: original graphic created in Photoshop
+* Black Square Graphic: original graphic created in Photoshop
 
-4. Win Seal: public domain graphic from [Raw Pixel](rawpixel.com). [Media Link](https://www.rawpixel.com/image/10163078/png-white-background-plant#eyJrZXlzIjoiZ29sZCB3cmVhdGgiLCJzb3J0ZWRLZXlzIjoiZ29sZCB3cmVhdGgifQ==)
+* Win Seal: public domain graphic from [Raw Pixel](rawpixel.com). [Media Link](https://www.rawpixel.com/image/10163078/png-white-background-plant#eyJrZXlzIjoiZ29sZCB3cmVhdGgiLCJzb3J0ZWRLZXlzIjoiZ29sZCB3cmVhdGgifQ==)
 
-5. Artifact Images: sourced from [The Metropolitan Museum of Art Open Access Project](https://github.com/metmuseum/openaccess):
-    * "File:Head of Gudea (Metropolitan Museum of Art).jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "File:Statue of Gudea, Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "File:Human-headed bison Neo-Sumerian circa 2080 BCE.jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "File:Ringstone MET DT9196.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "Scepter (MET collection)" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/?ref=openverse.
-    * "File:Whip Handle in the Shape of a Horse 1390-1353 BCE.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "Sarmatian cup with animal handle (1st century CE, reproduction)" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/?ref=openverse.
-    * "Old Assyrian drinking vessel Kültepe" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/?ref=openverse.
-    * "Etruscan bronze funerary urn with Scythian mounted archer, mid-5th century BCE" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
-    * "Terracotta skyphos" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
-    * "AI-Restored Head of an Oba, Benin Bronze, 1550" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/?ref=openverse.
-    * "Cup with a Poem on Wine. Ibn Sukkara al-Hashimi (d. 995–6 CE). Buyid dynasty. Iran" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
-    * "Pyxis attique à figures rouges MET" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en/?ref=openverse.
-    * "File:Kushano-Sasanian footed cup with medallion 3rd-4th century CE Bactria Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
-    * "Terret (Rein Guide) Celtic or Roman The Metropolitan Museum of Art" by Metropolitan Museum of Art is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
+* Artifact Images: sourced from [The Metropolitan Museum of Art Open Access Project](https://github.com/metmuseum/openaccess). :
+
+    1. "File:Head of Gudea (Metropolitan Museum of Art).jpg"
+    2. "File:Statue of Gudea, Metropolitan Museum of Art.jpg" 
+    3. "File:Human-headed bison Neo-Sumerian circa 2080 BCE.jpg"
+    4. "File:Ringstone MET DT9196.jpg"
+    5. "Scepter (MET collection)"
+    6. "File:Whip Handle in the Shape of a Horse 1390-1353 BCE.jpg"
+    7. "Sarmatian cup with animal handle (1st century CE, reproduction)"
+    8. "Old Assyrian drinking vessel Kültepe"
+    9. "File:Kushano-Sasanian footed cup with medallion 3rd-4th century CE Bactria Metropolitan Museum of Art.jpg"
+    10. "Pyxis attique à figures rouges MET"
+    11. "AI-Restored Head of an Oba, Benin Bronze, 1550"
+
+        ARTIFACT IMAGES 1-11:
+        by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. 
+    
+        To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
+
+    12. "Etruscan bronze funerary urn with Scythian mounted archer, mid-5th century BCE"
+    13. "Terracotta skyphos"
+    14. "Cup with a Poem on Wine. Ibn Sukkara al-Hashimi (d. 995–6 CE). Buyid dynasty. Iran"
+    15. "Terret (Rein Guide) Celtic or Roman The Metropolitan Museum of Art"
+
+        ARTIFACT IMAGES 12-15:
+        by Metropolitan Museum of Art is licensed under CC BY-SA 4.0.
+    
+        To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/?ref=openverse.
 
 ### Screenshots:
 1. welcome screen with intro to game concept
