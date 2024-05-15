@@ -1,7 +1,7 @@
 #### General Assembly Project1: Find The Fraud, Game of Concentration
 <img src="screenshots/03.game-matchesfound-screenshot.png" alt="Find The Fraud Game Screen Screenshot"/>
 
-### Deployed Site: https://pepperrostami.github.io/project1/
+### [DEPLOYED SITE](https://pepperrostami.github.io/project1/)
 
 Created by Pepper Rostamizadeh
 
