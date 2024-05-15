@@ -45,15 +45,15 @@ A game of concentration but thematically in a museum context similar to the Met.
 2. All SFX: 'Dupe-Found', 'No-Match', 'Select', 'Start-Game', 'Win-Game' and 'Lose-Game' original files created by Aria Rostamizadeh.
 
 ## GFX
-1. Background: still from licensed Adobe stock video: https://stock.adobe.com/. Media Link: https://fotolia-prod-videos-0.s3.eu-west-1.amazonaws.com/03/94/69/36/F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.video?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUMGGMQGEWGREN62H%2F20240504%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240504T214355Z&X-Amz-Expires=3600&X-Amz-Signature=ebb4f99632e22f83862e43bf642926abc3464d6d84efd3f5620df5145c011ef6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DAdobeStock_394693644.mov
+1. Background: still from licensed [Adobe Stock](https://stock.adobe.com/) video. [MEDIA LINK](https://fotolia-prod-videos-0.s3.eu-west-1.amazonaws.com/03/94/69/36/F_394693644_DnAEbgtieBiEikXl08t4dZjNzCb2vfzy.video?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUMGGMQGEWGREN62H%2F20240504%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240504T214355Z&X-Amz-Expires=3600&X-Amz-Signature=ebb4f99632e22f83862e43bf642926abc3464d6d84efd3f5620df5145c011ef6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DAdobeStock_394693644.mov)
 
-2. Magnifying Glass: creative commons graphic created by pendragon1966, uploaded to Deviant Art: https://www.deviantart.com/pendragon1966/art/Steampunk-Victorian-Magnifying-glass-Icon-Mk5-331089780
+2. Magnifying Glass: creative commons graphic created by pendragon1966 via [Deviant Art](https://www.deviantart.com/pendragon1966/art/Steampunk-Victorian-Magnifying-glass-Icon-Mk5-331089780)
 
-3. Black square graphic: original graphic created in Photoshop
+3. Black Square Graphic: original graphic created in Photoshop
 
-4. Win seal: public domain graphic from rawpixel.com: https://www.rawpixel.com/image/10163078/png-white-background-plant#eyJrZXlzIjoiZ29sZCB3cmVhdGgiLCJzb3J0ZWRLZXlzIjoiZ29sZCB3cmVhdGgifQ==
+4. Win Seal: public domain graphic from [Raw Pixel](rawpixel.com). [Media Link](https://www.rawpixel.com/image/10163078/png-white-background-plant#eyJrZXlzIjoiZ29sZCB3cmVhdGgiLCJzb3J0ZWRLZXlzIjoiZ29sZCB3cmVhdGgifQ==)
 
-5. ARTIFACT IMAGES sourced from The Metropolitan Museum of Art Open Access project. https://github.com/metmuseum/openaccess :
+5. Artifact Images: sourced from [The Metropolitan Museum of Art Open Access Project](https://github.com/metmuseum/openaccess):
     * "File:Head of Gudea (Metropolitan Museum of Art).jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
     * "File:Statue of Gudea, Metropolitan Museum of Art.jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
     * "File:Human-headed bison Neo-Sumerian circa 2080 BCE.jpg" by Metropolitan Museum of Art CC0 1.0 Universal (CC0 1.0) Public Domain Dedication per information on webpage is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/deed.en?ref=openverse.
